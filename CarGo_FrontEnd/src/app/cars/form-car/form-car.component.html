@@ -1,0 +1,47 @@
+<div class="container-form-customers">
+  <div class="field">
+    <label class="label" for="">Marca:</label>
+    <div class="control">
+      <input class="input" type="text" [(ngModel)]="car.brand" placeholder="Escribe la marca" maxlength="35" required>
+    </div>
+
+  <div class="field">
+    <label class="label">Modelo:</label>
+    <div class="control">
+      <input class="input" type="text" [(ngModel)]="car.model" placeholder="Escribe el modelo" maxlength="45" required>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Año:</label>
+    <div class="control">
+      <input class="input" type="number" [(ngModel)]="car.year" placeholder="Escribe el año del carro" maxlength="4" required>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Tipo de carro:</label>
+    <div class="control">
+      <input class="input" type="text" [(ngModel)]="car.type_car" placeholder="Escribe el tipo de carro" maxlength="18" required>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Número de placa:</label>
+    <div class="control">
+      <input class="input" type="text" [(ngModel)]="car.plate_number" placeholder="Escribe el número de placa" maxlength="8" required>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Precio por día:</label>
+    <div class="control">
+      <input class="input" type="number" [(ngModel)]="car.price_day" placeholder="Escribe el precio por día" required>
+    </div>
+  </div>
+
+  </div>
+
+  <button class="button" (click)="registerCar()">Registrar</button>
+
+</div>

@@ -1,0 +1,34 @@
+.table{
+  margin-left: 18vh;
+  margin-top: 5vh;
+}
+
+.btn-update{
+  background-color: rgb(93, 255, 52);
+  color: black;
+  font-weight: bold;
+}
+
+.btn-delete{
+  background-color: red;
+  font-weight: bold;
+}
+
+.text-edit-customer{
+  font-weight: bold;
+  color: white;
+  font-size: 50px;
+}
+
+.cancel-changes-customer{
+  background-color: red;
+  font-weight: bold;
+  margin-left: 12vh;
+  width: 13%;
+}
+
+.accept-changes-customer{
+  background-color: rgb(93, 255, 52);
+  color: black;
+  font-weight: bold;
+}

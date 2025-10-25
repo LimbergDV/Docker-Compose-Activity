@@ -1,0 +1,46 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Año</th>
+      <th>Tipo de carro</th>
+      <th>Número de Placa</th>
+      <th>Precio por día</th>
+      <th>Acciones</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of cars">
+      <td>{{ car.id_car }}</td>
+      <td>{{ car.brand }}</td>
+      <td>{{ car.model}}</td>
+      <td>{{ car.year }}</td>
+      <td>{{ car.type_car}}</td>
+      <td>{{ car.plate_number }}</td>
+      <td>{{ car.price_day }}</td>
+      <td>
+        <button class="button btn-update" (click)="seleccionarCarro(car)">Actualizar</button>
+        <td>
+        <button class="button btn-delete" (click)="eliminarCarro(car.id_car)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="selectedCar">
+  <h3 class="text-edit-customer">Actualizar Carro</h3>
+  <form (ngSubmit)="actualizarCarro()">
+    <input class="input" [(ngModel)]="selectedCar.brand" name="brand" placeholder="Marca" required />
+    <input class="input" [(ngModel)]="selectedCar.model" name="model" placeholder="Modelo" required />
+    <input class="input" [(ngModel)]="selectedCar.year" name="year" placeholder="Año" required />
+    <input class="input" [(ngModel)]="selectedCar.type_car" name="type_car" placeholder="Tipo de carro" required />
+    <input class="input" [(ngModel)]="selectedCar.plate_number" name="plate_number" placeholder="Número de placa" required />
+    <input class="input" [(ngModel)]="selectedCar.price_day" name="price_day" placeholder="Precio por día" required />
+    <button class="button accept-changes-customer" type="submit">Guardar Cambios</button>
+    <button class="button cancel-changes-customer" type="button" (click)="selectedCar = null; selectedCar = null">Cancelar</button>
+  </form>
+</div>

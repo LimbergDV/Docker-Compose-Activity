@@ -1,0 +1,33 @@
+.container-form-rents{
+  margin-left: 60vh;
+  margin-top: 5vh;
+}
+
+input[type="date"] {
+  width: 70vh;
+  padding: 0.5em;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+input[type="date"]:focus {
+  border-color: #00d1b2;
+  outline: none;
+}
+
+button{
+  width: 70vh;
+  background-color: blue;
+  color: white;
+  margin-top: 3vh;
+  font-weight: bold;
+}
+
+select{
+  width: 70vh;
+}
+
+.control input{
+  width: 70vh;
+}

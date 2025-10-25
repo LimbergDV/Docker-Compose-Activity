@@ -1,0 +1,46 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Teléfono</th>
+      <th>CURP</th>
+      <th>Número de Licencia</th>
+      <th>Fecha de Nacimiento</th>
+      <th>Acciones</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.id_customer }}</td>
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.last_names }}</td>
+      <td>{{ customer.phone_number }}</td>
+      <td>{{ customer.CURP }}</td>
+      <td>{{ customer.number_license }}</td>
+      <td>{{ customer.birthdate}}</td>
+      <td>
+        <button class="button btn-update" (click)="seleccionarCliente(customer)">Actualizar</button>
+        <td>
+        <button class="button btn-delete" (click)="eliminarCliente(customer.id_customer)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="selectedCustomer">
+  <h3 class="text-edit-customer">Actualizar Cliente</h3>
+  <form (ngSubmit)="actualizarCliente()">
+    <input class="input" [(ngModel)]="selectedCustomer.name" name="name" placeholder="Nombre" required />
+    <input class="input" [(ngModel)]="selectedCustomer.last_names" name="last_names" placeholder="Apellidos" required />
+    <input class="input" [(ngModel)]="selectedCustomer.phone_number" name="phone_number" placeholder="Teléfono" required />
+    <input class="input" [(ngModel)]="selectedCustomer.CURP" name="CURP" placeholder="CURP" required />
+    <input class="input" [(ngModel)]="selectedCustomer.number_license" name="number_license" placeholder="Número de Licencia" required />
+    <input class="input" [(ngModel)]="selectedCustomer.birthdate" name="birthdate" placeholder="Fecha de Nacimiento" required />
+    <button class="button accept-changes-customer" type="submit">Guardar Cambios</button>
+    <button class="button cancel-changes-customer" type="button" (click)="selectedCustomer = null; selectedCustomer = null">Cancelar</button>
+  </form>
+</div>

@@ -1,0 +1,41 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Cliente</th>
+      <th>Carro</th>
+      <th>Fecha de Inicio</th>
+      <th>Fecha de Fin</th>
+      <th>Total</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rent of rents">
+      <td>{{ rent.id_rent }}</td>
+      <td>{{ rent.id_customer }}</td>
+      <td>{{ rent.id_car }}</td>
+      <td>{{ rent.start_date | date }}</td>
+      <td>{{ rent.end_date | date }}</td>
+      <td>{{ rent.total_price| currency }}</td>
+      <td><button class="button btn-update" (click)="selectRent(rent)">Actualizar</button></td>
+      <td><button class="button btn-delete" (click)="deleteRent(rent.id_rent)">Eliminar</button></td>
+
+
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="selectedRent">
+  <h3 class="text-edit-rent">Actualizar Renta</h3>
+  <form (ngSubmit)="updateRent()">
+    <input class="input" [(ngModel)]="selectedRent.id_rent" name="id_rent" placeholder="Nombre del Cliente" required />
+    <input class="input" [(ngModel)]="selectedRent.id_customer" name="id_customer" placeholder="Modelo del Carro" required />
+    <input class="input" [(ngModel)]="selectedRent.id_car" name="id_car" placeholder="Fecha de Inicio" required />
+    <input class="input" [(ngModel)]="selectedRent.start_date" name="start_date" placeholder="Fecha de Fin" required />
+    <input class="input" [(ngModel)]="selectedRent.end_date" name="end_date" placeholder="Total" required />
+    <input class="input" [(ngModel)]="selectedRent.total_price" name="total" placeholder="Total" required />
+    <button class="button accept-changes-rent" type="submit">Guardar Cambios</button>
+    <button class="button cancel-changes-rent" type="button" (click)="cleanSelection()">Cancelar</button>
+  </form>
+</div>

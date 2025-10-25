@@ -1,0 +1,16 @@
+.container-form-customers{
+  margin-left: 60vh;
+  margin-top: 5vh;
+}
+
+.input{
+  width: 70vh;
+}
+
+.button{
+  margin-top: 3vh;
+  width: 70vh;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}

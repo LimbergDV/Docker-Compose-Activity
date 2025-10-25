@@ -1,0 +1,24 @@
+# Ignorar todas las carpetas node_modules
+node_modules/
+
+# Ignorar la carpeta node_modules específica de tu backend
+CarGo_BackEnd/node_modules/
+
+# También es buena práctica ignorar los logs de npm, compilaciones, etc.
+npm-debug.log*
+*.log
+dist/
+.env
+
+CarGo_BackEnd/Dockerfile
+tsconfig.spec.json
+tsconfig.json
+tsconfig.app.json
+package.json
+package-lock.json
+angular.json
+.editorconfig
+.angular/
+.vscode/
+dist/
+public/

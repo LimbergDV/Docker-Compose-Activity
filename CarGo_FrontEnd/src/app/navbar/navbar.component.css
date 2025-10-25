@@ -1,0 +1,30 @@
+.navbar{
+  background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(25,255,177,0.6181066176470589) 100%, rgba(252,176,69,1) 100%);
+}
+
+.navbar-start-centered {
+  display: flex;
+  margin-left: -270px;
+  justify-content: space-evenly;
+  width: 200%;
+  font-family: 'Spartan', sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.navbar-start-centered .navbar-item {
+  margin: 0 -500px;
+}
+
+.navbar-item{
+  color: #000000;
+}
+
+.navbar .img-navbar{
+  margin-top: 20px;
+  margin-left: 15vh;
+  height: 50px;
+  width: 200px;
+}

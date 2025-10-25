@@ -1,0 +1,16 @@
+# Usa la imagen oficial de MySQL, en este caso la versión 8.0
+FROM mysql:8.0
+
+# Define el directorio de trabajo (aunque en MySQL no se usa tanto como en Postgres)
+WORKDIR /Database
+
+ADD . /app
+
+ENV MYSQL_ROOT_PASSWORD="limberg1423"
+
+# 2. Nombre de la base de datos a crear
+ENV MYSQL_DATABASE=db_limberg
+
+
+# El puerto estándar de MySQL es el 3306
+EXPOSE 3306

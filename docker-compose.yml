@@ -1,0 +1,55 @@
+version: "3.8"
+
+services:
+  frontend_limberg:
+    build:
+      context: ./CarGo_FrontEnd
+      dockerfile: Dockerfile
+    container_name: frontend_limberg
+    ports:
+      - "3000:3000"
+    environment:
+      - API_URL=http://backend_delvalle:5000
+    depends_on:
+      - backend_delvalle
+    networks:
+      - limberg_network
+
+  backend_delvalle:
+    build:
+      context: ./CarGo_BackEnd
+      dockerfile: Dockerfile
+    container_name: backend_delvalle
+    ports:
+      - "5001:3000"
+    environment:
+      - DB_HOST=db_limberg       
+      - DB_NAME=db_cargo
+      - DB_USER=root
+      - DB_PASSWORD=limberg1423
+    depends_on:
+      - db_limberg
+    networks:
+      - limberg_network
+
+  db_limberg:
+    image: mysql:8.0
+    container_name: db_limberg
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=limberg1423
+      - MYSQL_DATABASE=db_cargo
+    volumes:
+      - limberg_mysql_data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - limberg_network
+
+volumes:
+  limberg_mysql_data:
+    name: limberg_mysql_data
+
+networks:
+  limberg_network:
+    driver: bridge
